@@ -8,7 +8,7 @@ class IngresoInDB(BaseModel):
     constante: bool
 
 database_ingresos = []
-generator = {'id': 0}
+generator = {'id': 1}
 
 def save_ingresos(ingreso_in_db: IngresoInDB):
     generator['id'] = generator['id'] + 1
@@ -16,4 +16,5 @@ def save_ingresos(ingreso_in_db: IngresoInDB):
     database_ingresos.append(ingreso_in_db)
     return ingreso_in_db
 
-
+def get_ingresos():
+    return database_ingresos

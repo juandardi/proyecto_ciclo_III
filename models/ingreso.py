@@ -1,5 +1,16 @@
 from pydantic import BaseModel
 
+class IngresoIn(BaseModel):
+    tipo: str
+    valor: float
+    constante: bool
+
+class IngresoOut(BaseModel):
+    tipo: str
+    valor: float
+    mensaje = "Registro exitoso"
+
+'''
 class Salario(BaseModel):
     valor: int
     tipo = 'salario'
@@ -14,3 +25,4 @@ class Inversion(BaseModel):
     valor: int
     tipo = 'inversion'
     constante = False
+'''
