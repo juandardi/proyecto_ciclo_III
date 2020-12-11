@@ -1,1 +1,1 @@
-web: uvicorn main:api --host=127.0.0.1 --port=${POST:8000}
+web: uvicorn main:api --host=127.0.0.1 -p $8000
