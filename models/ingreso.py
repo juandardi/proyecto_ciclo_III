@@ -6,9 +6,9 @@ class IngresoIn(BaseModel):
     constante: bool
 
 class IngresoOut(BaseModel):
+    id_ingreso: int
     tipo: str
     valor: float
-    mensaje = "Registro exitoso"
 
 '''
 class Salario(BaseModel):
