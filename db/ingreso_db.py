@@ -13,24 +13,31 @@ class IngresoInDB(BaseModel):
 tipos_validos = ['salario', 'ocasional', 'inversion']
 
 database_ingresos = {
-    101: IngresoInDB(**{"id_ingreso": 101,
-                        "tipo": "ocasional",
-                        "valor": 1000,
+    "salario": IngresoInDB(**{"id_ingreso": 101,
+                        "tipo": "salario",
+                        "valor": 0,
                         "constante": False}),
-    102: IngresoInDB(**{"id_ingreso": 102,
-                        "tipo": "inversion",
-                        "valor": 5000,
-                        "constante": False})
+    "ocasional": IngresoInDB(**{"id_ingreso": 102,
+                        "tipo": "ocasional",
+                        "valor": 0,
+                        "constante": False}),
+    "inversion": IngresoInDB(**{"id_ingreso": 103,
+                            "tipo": "inversion",
+                            "valor": 0,
+                            "constante": False}),
+
 }
 generator = {'id': 102}
 
+
+print( database_ingresos["salario"].valor)
+
 def save_ingresos(ingreso_in_db: IngresoInDB):
-    generator['id'] = generator['id'] + 1
-    ingreso_in_db.id_ingreso = generator['id']
-    database_ingresos[generator['id']] = ingreso_in_db
+    database_ingresos[ingreso_in_db.tipo].valor = ingreso_in_db.valor
+
     return ingreso_in_db
 
-def get_ingresos(id: int):
+def get_ingresos(id: str):
     if id in database_ingresos.keys():
         return database_ingresos[id]
     else: 
