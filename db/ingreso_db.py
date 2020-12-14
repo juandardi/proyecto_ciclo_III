@@ -24,6 +24,7 @@ database_ingresos = {
 }
 generator = {'id': 102}
 
+
 def save_ingresos(ingreso_in_db: IngresoInDB):
     generator['id'] = generator['id'] + 1
     ingreso_in_db.id_ingreso = generator['id']
