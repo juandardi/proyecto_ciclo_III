@@ -30,8 +30,6 @@ database_ingresos = {
 generator = {'id': 102}
 
 
-print( database_ingresos["salario"].valor)
-
 def save_ingresos(ingreso_in_db: IngresoInDB):
     database_ingresos[ingreso_in_db.tipo].valor = ingreso_in_db.valor
 
